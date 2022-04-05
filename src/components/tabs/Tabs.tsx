@@ -12,19 +12,19 @@ const Tabs = () => {
                     className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
                     onClick={() => toggleTab(1)}
                 >
-                    Tab 1
+                    Companies
                 </button>
                 <button
                     className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
                     onClick={() => toggleTab(2)}
                 >
-                    Tab 2
+                    Activities
                 </button>
                 <button
                     className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
                     onClick={() => toggleTab(3)}
                 >
-                    Tab 3
+                    Declarations
                 </button>
             </div>
 
