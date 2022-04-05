@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "../../App.css";
+import Content1 from "../Content1";
+import Content2 from "../Content2";
+import Content3 from "../Content3";
 
 const TabsPage = () => {
     const [toggleState, setToggleState] = useState(1)
@@ -30,43 +33,9 @@ const TabsPage = () => {
                </div>
 
                <div className="content-tabs">
-                   <div
-                       className={toggleState === 1 ? "content  active-content" : "content"}
-                   >
-                       <h2>Content 1</h2>
-                       <hr />
-                       <p>
-                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-                           praesentium incidunt quia aspernatur quasi quidem facilis quo nihil
-                           vel voluptatum?
-                       </p>
-                   </div>
-
-                   <div
-                       className={toggleState === 2 ? "content  active-content" : "content"}
-                   >
-                       <h2>Content 2</h2>
-                       <hr />
-                       <p>
-                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-                           voluptatum qui adipisci.
-                       </p>
-                   </div>
-
-                   <div
-                       className={toggleState === 3 ? "content  active-content" : "content"}
-                   >
-                       <h2>Content 3</h2>
-                       <hr />
-                       <p>
-                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos sed
-                           nostrum rerum laudantium totam unde adipisci incidunt modi alias!
-                           Accusamus in quia odit aspernatur provident et ad vel distinctio
-                           recusandae totam quidem repudiandae omnis veritatis nostrum
-                           laboriosam architecto optio rem, dignissimos voluptatum beatae
-                           aperiam voluptatem atque. Beatae rerum dolores sunt.
-                       </p>
-                   </div>
+                   <Content1 toggleState={toggleState} />
+                  <Content2 toggleState={toggleState} />
+                   <Content3 toggleState={toggleState} />
                </div>
            </div>
             <div/>

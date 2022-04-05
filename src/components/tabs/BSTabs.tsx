@@ -2,11 +2,13 @@ import React, {useState} from "react";
 import {Tab, Tabs} from "react-bootstrap";
 import '../../App.css';
 
+/**
 export enum Page {
     COMPANIES,
     ACTIVITIES,
     DECLARATIONS,
 }
+*/
 
 const BSTabs = () => {
     const [key, setKey] = useState("declarations");
