@@ -1,3 +1,4 @@
+import produce from "immer";
 import { useState } from "react";
 
 interface Person {
@@ -13,7 +14,7 @@ const WorkUnitForm = () => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      {people.map((p) => {
+      {people.map((p, index) => {
         return (
           <div key={p.id}>
             <input
@@ -22,19 +23,24 @@ const WorkUnitForm = () => {
               onChange={(e) => {
                 const firstName = e.target.value; // make sure that value is correct, since further it's closure
                 setPeople((currentPerson) =>
-                  currentPerson.map((x) =>
-                    x.id === p.id
-                      ? {
-                          ...x,
-                          firstName,
-                        }
-                      : x
-                  )
+                  produce(currentPerson, (v) => {
+                    v[index].firstName = firstName;
+                  })
                 );
-                //e.target.value
               }}
             />
-            <input value={p.lastName} placeholder={"last name"} />
+            <input
+              value={p.lastName}
+              placeholder={"last name"}
+              onChange={(e) => {
+                const lastName = e.target.value;
+                setPeople((currentPerson) =>
+                  produce(currentPerson, (v) => {
+                    v[index].lastName = lastName;
+                  })
+                );
+              }}
+            />
           </div>
         );
       })}
