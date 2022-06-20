@@ -1,5 +1,6 @@
 import produce from "immer";
 import { useState } from "react";
+import { generate } from "shortid";
 
 interface Person {
   id: string;
@@ -14,6 +15,20 @@ const WorkUnitForm = () => {
 
   return (
     <div style={{ textAlign: "center" }}>
+      <button
+        onClick={() => {
+          setPeople((currentPerson) => [
+            ...currentPerson,
+            {
+              id: generate(),
+              firstName: "",
+              lastName: "",
+            },
+          ]);
+        }}
+      >
+        Add new person
+      </button>
       {people.map((p, index) => {
         return (
           <div key={p.id}>
@@ -41,9 +56,20 @@ const WorkUnitForm = () => {
                 );
               }}
             />
+
+            <button
+              onClick={() => {
+                setPeople(
+                  (currentPerson) => currentPerson.filter((x) => x.id !== p.id) // as long as we r iterating over current id not equal to id of person in the list, keep it
+                );
+              }}
+            >
+              x
+            </button>
           </div>
         );
       })}
+      <div>{JSON.stringify(people)}</div>
     </div>
   );
 };
