@@ -3,6 +3,7 @@ import { Tab, Tabs } from "react-bootstrap";
 import "../../App.css";
 import ListCompanies from "../list_company/ListCompanies";
 import WorkUnitForm from "../WorkUnitForm/WorkUnitForm";
+import WorkUnitForm2 from "../WorkUnitForm/WorkUnitForm2";
 
 /**
 export enum Page {
@@ -44,7 +45,7 @@ const BSTabs = () => {
             key === "activities" ? "content  active-content" : "content"
           }
         >
-          Content 2
+          <WorkUnitForm2 />
         </Tab>
         <Tab
           eventKey="declarations"
