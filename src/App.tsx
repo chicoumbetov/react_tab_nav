@@ -1,14 +1,14 @@
-import React from 'react';
-
-import './App.css';
-import TabsPage from "./components/tabs/TabsPage";
+import "./App.css";
 import BSTabs from "./components/tabs/BSTabs";
+import TabsPage from "./components/tabs/TabsPage";
+import WorkUnitForm2 from "./components/WorkUnitForm/WorkUnitForm2";
 
 function App() {
   return (
     <div className="App">
-      <TabsPage/>
-      <BSTabs/>
+      <WorkUnitForm2 />
+      <TabsPage />
+      <BSTabs />
     </div>
   );
 }
