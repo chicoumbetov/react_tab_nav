@@ -41,10 +41,17 @@ const WorkUnitForm2 = () => {
     setInputFields(values);
   };
 
+  const handleSubmit = (
+    e: React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+    console.log("input field", inputFields);
+  };
+
   return (
     <Container className="m-2">
       <h1>Add New Member</h1>
-      <form className={classes.root}>
+      <form className={classes.root} onSubmit={handleSubmit}>
         {inputFields.map((inputField, index) => (
           <div key={index}>
             <TextField
@@ -75,6 +82,7 @@ const WorkUnitForm2 = () => {
           type="submit"
           endIcon={<SendOutlined />}
           className={classes.button}
+          onClick={handleSubmit}
         >
           Send
         </Button>
