@@ -52,6 +52,12 @@ const WorkUnitForm2 = () => {
     setInputFields([...inputFields, { firstName: "", lastName: "" }]);
   };
 
+  const handleRemoveFields = (index: number) => {
+    const values = [...inputFields];
+    values.splice(index, 1);
+    setInputFields(values);
+  };
+
   return (
     <Container className="m-2">
       <h1>Add New Member</h1>
@@ -72,7 +78,7 @@ const WorkUnitForm2 = () => {
               value={inputField.lastName}
               onChange={(event) => handleChange(index, event)}
             />
-            <IconButton>
+            <IconButton onClick={() => handleRemoveFields(index)}>
               <Remove />
             </IconButton>
             <IconButton onClick={() => handleAddFields()}>
