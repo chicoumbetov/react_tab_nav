@@ -48,6 +48,10 @@ const WorkUnitForm2 = () => {
     console.log("input field", inputFields);
   };
 
+  const handleAddFields = () => {
+    setInputFields([...inputFields, { firstName: "", lastName: "" }]);
+  };
+
   return (
     <Container className="m-2">
       <h1>Add New Member</h1>
@@ -71,7 +75,7 @@ const WorkUnitForm2 = () => {
             <IconButton>
               <Remove />
             </IconButton>
-            <IconButton>
+            <IconButton onClick={() => handleAddFields()}>
               <AddIcon />
             </IconButton>
           </div>
